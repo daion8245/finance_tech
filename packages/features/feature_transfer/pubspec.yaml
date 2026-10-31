@@ -1,0 +1,23 @@
+name: feature_transfer
+resolution: workspace
+description: "AI 안심 점검(FDS)을 거치는 송금 시트."
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ^3.13.5
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_api: ^0.0.1
+  core_family: ^0.0.1
+  core_shell: ^0.0.1
+  core_ui: ^0.0.1
+  flutter_bloc: ^9.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

@@ -37,3 +37,9 @@ pubspec_overrides.yaml
 .env.*
 !.env.example
 docs
+
+# Backend (FastAPI)
+backend/.venv/
+backend/*.db
+__pycache__/
+.pytest_cache/

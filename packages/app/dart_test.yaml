@@ -1,6 +1,0 @@
-tags:
-  # Requieren el backend local y --dart-define; fuera del CI.
-  # flutter test --tags integration \
-  #   --dart-define=SUPABASE_URL=http://127.0.0.1:54421 \
-  #   --dart-define=SUPABASE_ANON_KEY=<publishable-key>
-  integration:

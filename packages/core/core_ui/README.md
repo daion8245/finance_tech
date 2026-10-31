@@ -1,71 +1,12 @@
 # core_ui
 
-Sistema de diseño compartido (Material 3, fuentes del sistema, sin
-dependencias de terceros). Todo se importa desde `package:core_ui/core_ui.dart`.
+핑거벨 디자인 시스템. 모든 것은 `package:core_ui/core_ui.dart`에서 가져옵니다.
 
-## Tema (pieza 1)
-
-- `AppTheme.light()` / `AppTheme.dark()`.
-- `AppSemanticColors` (`ThemeExtension`): `credit`, `debit`, `warning`.
-  `Theme.of(context).extension<AppSemanticColors>()!`.
-- `AppSpacing`: `xs` 4, `sm` 8, `md` 12, `lg` 16, `xl` 24, `xxl` 32.
-- `AppRadius`: `field` 12, `button` 12, `card` 16.
-
-## Entradas (pieza 2)
-
-- `AppButton`: ancho completo, mínimo 48 dp. Con `isLoading` o
-  `onPressed: null` queda deshabilitado; en carga anuncia "<etiqueta>,
-  cargando".
-- `AppButtonVariant`: `primary` (relleno), `secondary` (contorno), `text`.
-- `AppTextField`: etiqueta siempre visible; con `obscure` incluye mostrar/
-  ocultar contraseña (y desactiva sugerencias y autocorrección). El error lo
-  anuncia el `InputDecorator` como región en vivo.
-- `AppStepIndicator(current, total)`: segmentos más el texto "Paso N de M",
-  anunciado como una sola etiqueta. `current` es base 1.
-
-## Dinero y fechas (pieza 3)
-
-- `formatCents(int cents, {currency = 'USD'})`: `$1,234.56`, `-$1.00`. Solo
-  aritmética entera. Otras monedas muestran su código (`EUR 1.00`).
-- `formatDateEs` (`14 may 2026`) y `formatDateTimeEs` (`14 may 2026, 09:30`),
-  en hora local y 24 h. Meses: ene feb mar abr may jun jul ago sep oct nov dic.
-- `spokenAmountEs(int cents)`: `50 dólares con 00 centavos`, `1 dólar con 00
-  centavos`, `0 dólares con 01 centavo`; negativos con `menos`.
-- `AmountText(cents, isCredit, style)`: `+$50.00` / `−$12.30` (U+2212), color
-  de `AppSemanticColors` y etiqueta "Ingreso de ..." / "Egreso de ...". Recibe
-  la magnitud: usa el valor absoluto de `cents`. Requiere `AppTheme`.
-
-## Estados y errores (pieza 4)
-
-- `LoadingView`, `EmptyView(message)`, `ErrorView(message, onRetry)` con botón
-  "Reintentar", `OfflineBanner(onRetry)` (icono, texto y acción; región en
-  vivo; requiere `AppTheme`).
-- `EmptyView` y `ErrorView` están centradas cuando caben y hacen scroll si el
-  alto o el texto no alcanzan (nunca desbordan). Necesitan alto acotado, como
-  el cuerpo de un `Scaffold`; no colocarlas dentro de otro scroll sin altura.
-- `messageForFailure(Failure)` (usa `core_errors`): `network`, `auth`,
-  `rls_denied`, `insufficient_funds`; cualquier otro código, o ninguno, da
-  "Algo salió mal. Inténtalo de nuevo.". Nunca muestra `failure.message`
-  (puede ser técnico).
-
-## Decisiones anotadas
-
-- El texto de `OfflineBanner` no estaba fijado en el contrato: "Sin conexión.
-  Algunos datos pueden no estar al día." y acción "Reintentar".
-
-- Sin `intl`: el formato es manual para no añadir dependencias.
-- El día no lleva cero a la izquierda (`5 mar 2026`); la hora sí (`07:05`).
-
-- `AppButtonVariant` no tenía valores fijados en el contrato más allá de
-  `primary`; se añadieron `secondary` y `text`.
-- `AppButton` ocupa todo el ancho disponible; no usarlo dentro de un `Row` sin
-  `Expanded`.
-
-- El token `warning` no estaba en la tabla inicial. Valores elegidos con
-  contraste AA sobre fondo y superficie: claro `#8A5A00`, oscuro `#F2C46D`.
-- Tokens `outline` (bordes de campos, >= 3:1 contra el fondo) y
-  `outlineVariant` (divisores) añadidos: claro `#7C8591` / `#E1E4E8`, oscuro
-  `#6B7580` / `#2A3139`.
-- Los nombres de las constantes de `AppSpacing` y `AppRadius` no estaban
-  fijados en el contrato; son los de arriba.
-- Etiqueta de campo siempre visible (`FloatingLabelBehavior.always`).
+- **색 토큰** `FbColors` (`context.fb`): 파랑은 기본 동작, 빨강은 SOS·위험에만 씁니다. `FbColors.highContrast`는 고대비 모드.
+- **테마** `FbTheme.build(highContrast:)`.
+- **글꼴** `FbTheme.fontFamily` = 앱에 넣은 Noto Sans KR 가변 글꼴(`assets/fonts/NotoSansKR-VF.ttf`, SIL OFL 1.1, 라이선스 `assets/fonts/OFL.txt`). `FontWeight`가 글꼴의 wght 축(100~900)에 그대로 적용됩니다. 버튼처럼 `textStyle`을 직접 정하는 곳은 테마 글꼴이 이어지지 않으므로 `fontFamily: FbTheme.fontFamily`를 꼭 넣으세요 (빠지면 웹에서 한글이 네모로 보입니다). 앱 시작 때 `registerFontLicenses()`를 불러 라이선스 화면에 올립니다.
+- **글자** `FbText`: 시안의 rem 크기를 16px 기준으로 옮긴 스타일.
+- **레이아웃** `FbLayout`(웹/모바일 판단), `FbView`, `FbSplit`(웹 2단 · 모바일 순서 지정).
+- **시트** `showFbSheet`: 모바일은 바텀 시트, 웹은 모달. `SheetHead`.
+- **위젯** `FbCard`, `FbButton`, `FbButtonRow`, `FbToggle`, `FbSegmented`, `FbFilterChips`, `FbOptionRow`, `FbSettingRow`, `FbListRow`, `TxLogo`, `FbRowLink`, `FbBanner`, `ResultIcon`, `CenterBlock`, `FbRail`, `RiskBox`, `CountdownText`, `Brand`.
+- **형식** `won`, `wonOrHidden`, `formatWhen`, `formatCountdown`, `formatMinSec`, `ThousandsFormatter`.

@@ -1,0 +1,20 @@
+name: core_shell
+resolution: workspace
+description: "앱 셸 상태: 지금 보는 사용자, 탭, 화면 설정, 피드백(토스트·진동·음성) 요청."
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ^3.13.5
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_family: ^0.0.1
+  flutter_bloc: ^9.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

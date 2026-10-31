@@ -1,6 +1,6 @@
 name: core_ui
 resolution: workspace
-description: "Sistema de diseño compartido: tema, componentes y formato."
+description: "핑거벨 디자인 시스템: 파랑(기본)·빨강(SOS·위험) 토큰, 고대비 테마, 웹/모바일 레이아웃, 공용 위젯."
 publish_to: none
 version: 0.0.1
 
@@ -11,9 +11,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  core_errors: ^0.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+
+flutter:
+  # 한글 글꼴을 앱에 넣어 인터넷 없이도 웹·앱 모두 같은 글꼴로 보이게 합니다.
+  # 라이선스: assets/fonts/OFL.txt (SIL Open Font License 1.1)
+  fonts:
+    - family: NotoSansKR
+      fonts:
+        - asset: assets/fonts/NotoSansKR-VF.ttf
+  assets:
+    - assets/fonts/OFL.txt

@@ -1,0 +1,21 @@
+name: core_family
+resolution: workspace
+description: "가족 상태 도메인: 모델, 저장소, 서버와 실시간으로 맞춰지는 FamilyCubit."
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ^3.13.5
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_api: ^0.0.1
+  core_errors: ^0.0.1
+  flutter_bloc: ^9.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

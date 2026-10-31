@@ -1,20 +1,19 @@
-name: banco_digital
+name: fingerbell_workspace
 publish_to: none
 environment:
   sdk: ^3.9.0
 
 workspace:
   - packages/core/core_errors
-  - packages/features/feature_accounts
-  - packages/app
-  - packages/core/core_network
-  - packages/features/feature_onboarding
+  - packages/core/core_api
+  - packages/core/core_family
+  - packages/core/core_shell
   - packages/core/core_ui
-  - packages/core/core_storage
-  - packages/core/core_telemetry
-  - packages/features/feature_exchange
-  - packages/features/feature_notifications
-  - packages/features/feature_personalization
+  - packages/features/feature_sos
+  - packages/features/feature_transfer
+  - packages/features/feature_payment
+  - packages/features/feature_guardian
+  - packages/app
 dev_dependencies:
   melos: ^8.9.0
 
@@ -25,10 +24,10 @@ melos:
   scripts:
     analyze:
       run: melos exec -- flutter analyze
-      description: Analiza todos los paquetes
+      description: 모든 패키지 정적 분석
     test:
       run: melos exec --dir-exists=test -- flutter test --exclude-tags integration
-      description: Corre tests donde haya carpeta test (sin los de integración)
+      description: test 폴더가 있는 패키지의 테스트 실행 (통합 테스트 제외)
     test:changed:
       run: melos exec --diff=HEAD --include-dependents --dir-exists=test -- flutter test --reporter expanded --exclude-tags integration
-      description: Corre tests solo de lo modificado sin commitear + dependientes     
+      description: 커밋하지 않은 변경 패키지와 그 의존 패키지만 테스트     

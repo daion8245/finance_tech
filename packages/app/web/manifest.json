@@ -1,12 +1,12 @@
 {
-    "name": "banco_app",
-    "short_name": "banco_app",
+    "name": "핑거벨 안심 뱅킹",
+    "short_name": "핑거벨",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#f3f5f8",
+    "theme_color": "#3182f6",
+    "description": "노인·아동을 위한 모션 제어 및 보호자 연동형 안심 뱅킹",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {
@@ -31,5 +31,6 @@
             "type": "image/png",
             "purpose": "maskable"
         }
-    ]
+    ],
+    "lang": "ko"
 }

@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="FingerBell (Web)" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="filePath" value="$PROJECT_DIR$/packages/app/lib/main.dart" />
+    <option name="additionalArgs" value="--device-id=chrome --web-hostname=127.0.0.1 --web-port=8080 --dart-define=FINGERBELL_API_URL=http://127.0.0.1:8765 --no-pub" />
+    <option name="envs">
+      <entry key="FLUTTER_WINDOWS" value="false" />
+      <entry key="FLUTTER_LINUX" value="false" />
+    </option>
+    <method v="2" />
+  </configuration>
+</component>

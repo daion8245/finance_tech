@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="FingerBell (Android)" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="filePath" value="$PROJECT_DIR$/packages/app/lib/main.dart" />
+    <option name="additionalArgs" value="--dart-define=FINGERBELL_API_URL=http://127.0.0.1:8765 --no-pub" />
+    <option name="envs">
+      <entry key="FLUTTER_WINDOWS" value="false" />
+      <entry key="FLUTTER_LINUX" value="false" />
+    </option>
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="adb reverse (8765)" run_configuration_type="ShConfigurationType" />
+    </method>
+  </configuration>
+</component>

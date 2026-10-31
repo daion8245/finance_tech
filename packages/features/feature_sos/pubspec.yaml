@@ -1,0 +1,24 @@
+name: feature_sos
+resolution: workspace
+description: "원터치 SOS 계좌 동결: 흔들기(가속도 센서)·길게 누르기 감지, 동결 화면."
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ^3.13.5
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_api: ^0.0.1
+  core_family: ^0.0.1
+  core_shell: ^0.0.1
+  core_ui: ^0.0.1
+  flutter_bloc: ^9.1.1
+  sensors_plus: ^7.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

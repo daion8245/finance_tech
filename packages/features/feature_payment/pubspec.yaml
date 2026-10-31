@@ -1,0 +1,23 @@
+name: feature_payment
+resolution: workspace
+description: "상황별 안심 모드(MCC 화이트리스트)를 따르는 결제 시트."
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ^3.13.5
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_api: ^0.0.1
+  core_family: ^0.0.1
+  core_shell: ^0.0.1
+  core_ui: ^0.0.1
+  flutter_bloc: ^9.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0

@@ -1,0 +1,23 @@
+name: feature_guardian
+resolution: workspace
+description: "보호자 화면: 콜백 승인, 가족 모니터링, 원격 한도·모드·동결 관리, ARS 확인 전화."
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ^3.13.5
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_api: ^0.0.1
+  core_family: ^0.0.1
+  core_shell: ^0.0.1
+  core_ui: ^0.0.1
+  flutter_bloc: ^9.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
